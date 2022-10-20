@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { fade } from "../Animation";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const HeroComponent = () => {
-  //   const navigate = useNavigate();
-  //   const navigateSell = () => {
-  //     navigate("/sell");
-  //   };
+  const navigate = useNavigate();
+  const navigateSell = () => {
+    navigate("/sell");
+  };
 
   return (
     <>
@@ -24,14 +24,14 @@ const HeroComponent = () => {
         </h2>
       </Head>
       <Buttons>
-        {/* <Link to="/categories"> */}
-        <motion.button variants={fade} className="b1">
-          BUY
-        </motion.button>
-        {/* </Link> */}
+        <Link to="/categories">
+          <motion.button variants={fade} className="b1">
+            BUY
+          </motion.button>
+        </Link>
 
         <motion.button
-          //   onClick={navigateSell}
+          onClick={navigateSell}
           variants={fade}
           button
           className="b2"
@@ -45,7 +45,7 @@ const HeroComponent = () => {
 
 const Head = styled.div`
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 3.5rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   h1 {

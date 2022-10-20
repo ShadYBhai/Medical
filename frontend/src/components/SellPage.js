@@ -13,9 +13,10 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Copyright from "./Tiny_Components/Copyright";
 import Dropdown from "./Tiny_Components/Dropdown";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import styled from "styled-components";
 
-const theme = createTheme();
+// const theme = createTheme();
 
 class SellPage extends Component {
   state = {
@@ -36,8 +37,9 @@ class SellPage extends Component {
     const { element, date } = this.state;
 
     return (
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+      // <ThemeProvider theme={theme}>
+      <>
+        <Container maxWidth="xs">
           <CssBaseline />
           <Box
             sx={{
@@ -120,9 +122,14 @@ class SellPage extends Component {
           </Box>
           <Copyright sx={{ mt: 5 }} />
         </Container>
-      </ThemeProvider>
+      </>
+
+      // </ThemeProvider>
     );
   }
 }
+// const Sell = styled.div`
+//   background-color: #363636;
+// `;
 
 export default SellPage;
