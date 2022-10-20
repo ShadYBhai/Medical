@@ -22,12 +22,12 @@ const Header = () => {
             <Nav style={{ marginLeft: "auto" }}>
               <Link to="/cart">
                 <Nav style={{ color: "white", marginRight: "3rem" }}>
-                  <i className="fas fa-shopping-cart"></i>
+                  <i className="fas fa-shopping-cart"> Cart</i>
                 </Nav>
               </Link>
               <Link to="/login">
                 <Nav style={{ color: "white" }}>
-                  <i className="fas fa-user"></i>
+                  <i className="fas fa-user"> SIGN IN</i>
                 </Nav>
               </Link>
             </Nav>
