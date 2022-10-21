@@ -1,10 +1,22 @@
-import React from "react";
-import category from "../category";
+import { React, useEffect, useState } from "react";
+// import category from "../category";
 import { Row, Col } from "react-bootstrap";
 import Category from "../components/Category";
 import styled from "styled-components";
+import axios from "axios";
 
 const Categories = () => {
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    const fetchCategory = async () => {
+      const { data } = await axios.get("/api/category");
+
+      setCategory(data);
+    };
+    fetchCategory();
+  });
+
   return (
     <>
       <H1>Shop By Categories</H1>

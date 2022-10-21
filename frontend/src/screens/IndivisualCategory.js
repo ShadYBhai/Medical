@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   Row,
@@ -13,14 +13,20 @@ import {
 import Rating from "../components/Rating";
 import category from "../category";
 import Category from "../components/Category";
+import axios from "axios";
 
-const IndivisualCategoryScreen = ({ match }) => {
+const IndivisualCategoryScreen = () => {
   const { id } = useParams();
-  const cat = category.find((p) => p._id === id);
 
-  if (!cat) return null;
+  const [category, setCategory] = useState({});
 
-  console.log(cat);
+  useEffect(() => {
+    const fecthCat = async () => {
+      const { data } = await axios.get(`/api/category/${id}`);
+      setCategory(data);
+    };
+    fecthCat();
+  }, []);
 
   return (
     <Container>
