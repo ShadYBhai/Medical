@@ -66,6 +66,9 @@ const GlobalStyle = createGlobalStyle`
             font-size: 1rem;
             line-height: 120%;
         }
+h1{
+    color: black;
+}
 
 `;
 
