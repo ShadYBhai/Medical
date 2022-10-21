@@ -95,7 +95,7 @@ class SellPage extends Component {
                       inputFormat="MM-YYYY"
                       views={["month", "year"]}
                       value={date}
-                      onChange={() => this.handleDateChange}
+                      onChange={() => this.handleDateChange(date)}
                       renderInput={(params) => (
                         <TextField {...params} fullWidth />
                       )}
