@@ -11,7 +11,7 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
-import category from "../category";
+// import category from "../category";
 import Category from "../components/Category";
 import axios from "axios";
 
@@ -21,12 +21,19 @@ const IndivisualCategoryScreen = () => {
   const [category, setCategory] = useState({});
 
   useEffect(() => {
-    const fecthCat = async () => {
+    const fetchCategory = async () => {
       const { data } = await axios.get(`/api/category/${id}`);
       setCategory(data);
     };
-    fecthCat();
+
+    fetchCategory();
   }, []);
+
+  // const cat = category.find((p) => p._id === id);
+
+  // if (!cat) return null;
+
+  // console.log(cat);
 
   return (
     <Container>

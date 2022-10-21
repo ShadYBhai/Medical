@@ -4,19 +4,20 @@ import { Row, Col } from "react-bootstrap";
 import Category from "../components/Category";
 import styled from "styled-components";
 import axios from "axios";
+// import { useParams } from "react-router-dom";
 
 const Categories = () => {
+  // const { id } = useParams();
+
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    const fetchCategory = async () => {
-      const { data } = await axios.get("/api/category");
-
+    const fecthCat = async () => {
+      const { data } = await axios.get(`/api/category`);
       setCategory(data);
     };
-    fetchCategory();
-  });
-
+    fecthCat();
+  }, []);
   return (
     <>
       <H1>Shop By Categories</H1>
