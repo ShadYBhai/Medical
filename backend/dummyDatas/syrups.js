@@ -1,0 +1,48 @@
+const syrups = [
+  {
+    _id: "1",
+    name: "",
+    image: "/images/",
+    description: "",
+    category: "",
+    price: 89.99,
+    countInStock: 10,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "2",
+    name: "",
+    image: "/images/",
+    description: "",
+    category: "",
+    price: 89.99,
+    countInStock: 10,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "3",
+    name: "",
+    image: "/images/",
+    description: "",
+    category: "",
+    price: 89.99,
+    countInStock: 10,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    _id: "4",
+    name: "",
+    image: "/images/",
+    description: "",
+    category: "",
+    price: 89.99,
+    countInStock: 10,
+    rating: 4.5,
+    numReviews: 12,
+  },
+];
+
+module.exports = syrups;
