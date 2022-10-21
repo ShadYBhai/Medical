@@ -16,7 +16,10 @@ function App() {
         <Route path="/product/:id" element={<IndivisualProductScreen />} />
         <Route path="/" element={<HomeScreen />} />
         <Route path="/sell" element={<SellPage />} />
-        <Route path="/category/:id" element={<IndivisualCategoryScreen />} />
+        <Route
+          path="/category/category"
+          element={<IndivisualCategoryScreen />}
+        />
       </Routes>
       <div style={{ marginTop: "10rem" }}>
         <Footer />

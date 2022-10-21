@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Category = ({ category }) => {
   return (
     <Card className="my-2 p-2 rounded">
-      <Link to={`/category/${category._id}`}>
+      <Link to={`/category/${category.category}`}>
         <Card.Img src={category.image} variant="top" />
       </Link>
 

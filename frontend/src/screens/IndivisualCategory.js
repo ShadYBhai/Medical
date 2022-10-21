@@ -1,3 +1,7 @@
+////NEED TO FETCH THE SUBCATEGORIES PRODUCTSSS IN HERE..........
+////    //////
+///
+/////
 import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
@@ -10,19 +14,19 @@ import {
   Container,
   ListGroupItem,
 } from "react-bootstrap";
-import Rating from "../components/Rating";
+// import Rating from "../components/Rating";
 // import category from "../category";
 import Category from "../components/Category";
 import axios from "axios";
 
 const IndivisualCategoryScreen = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   const [category, setCategory] = useState({});
 
   useEffect(() => {
     const fetchCategory = async () => {
-      const { data } = await axios.get(`/api/category/${id}`);
+      const { data } = await axios.get(`/api/category/${category.category}`);
       setCategory(data);
     };
 
