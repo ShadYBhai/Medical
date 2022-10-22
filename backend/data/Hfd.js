@@ -1,4 +1,4 @@
-const Hfd = [
+const hfd = [
   {
     _id: "1",
     name: "DrNATcURE Apple Cider Vinegar",
@@ -51,4 +51,4 @@ const Hfd = [
   },
 ];
 
-module.exports = Hfd;
+export default hfd;

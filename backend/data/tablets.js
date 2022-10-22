@@ -45,4 +45,4 @@ const tablets = [
   },
 ];
 
-module.exports = tablets;
+export default tablets;

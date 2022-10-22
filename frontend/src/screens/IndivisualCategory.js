@@ -22,16 +22,19 @@ import axios from "axios";
 const IndivisualCategoryScreen = () => {
   // const { id } = useParams();
 
-  const [category, setCategory] = useState({});
+  const [category, setCategory] = useState([]);
+
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchCategory = async () => {
-      const { data } = await axios.get(`/api/category/${category.category}`);
+      const { data } = await axios.get(`/api/productsByCategory/${id}`);
+      console.log(data);
       setCategory(data);
     };
 
     fetchCategory();
-  }, []);
+  }, [id]);
 
   // const cat = category.find((p) => p._id === id);
 
@@ -46,11 +49,12 @@ const IndivisualCategoryScreen = () => {
       </Link>
       <Col>
         <Row>
-          {category.map((category) => (
-            <Col key={category._id} sm={11} md={5} lg={5} xl={2}>
-              <Category category={category} />
-            </Col>
-          ))}
+          {category &&
+            category.map((category) => (
+              <Col key={category._id} sm={11} md={5} lg={5} xl={2}>
+                <Category category={category} />
+              </Col>
+            ))}
         </Row>
       </Col>
     </Container>

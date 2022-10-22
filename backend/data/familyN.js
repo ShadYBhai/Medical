@@ -45,4 +45,4 @@ const familyN = [
   },
 ];
 
-module.exports = familyN;
+export default familyN;

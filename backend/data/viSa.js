@@ -46,4 +46,4 @@ const viSa = [
   },
 ];
 
-module.exports = viSa;
+export default viSa;

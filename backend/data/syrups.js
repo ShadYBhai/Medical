@@ -44,5 +44,4 @@ const syrups = [
     numReviews: 12,
   },
 ];
-
-module.exports = syrups;
+export default syrups;

@@ -20,3 +20,5 @@ const tab = [
     image: "/images/honey.jpg",
   },
 ];
+
+export default tab;

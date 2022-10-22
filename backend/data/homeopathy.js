@@ -49,4 +49,4 @@ const homeopathy = [
   },
 ];
 
-module.exports = homeopathy;
+export default homeopathy;
