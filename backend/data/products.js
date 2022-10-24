@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "TYLIDYS Tablet 30's",
     image: "/images/honey.jpg",
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "3",
     name: "Dabur Honey",
     image: "/images/honey.jpg",
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "4",
     name: " Dabur Honey",
     image: "/images/honey.jpg",
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "5",
     name: "Dabur Honey",
     image: "/images/honey.jpg",
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "613",
     name: "Dabur Honey",
     image: "/images/honey.jpg",
     description:
@@ -78,7 +72,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "142",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -91,7 +84,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "131",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -104,7 +96,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "111",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -117,7 +108,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "31",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -130,7 +120,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "32",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:
@@ -143,7 +132,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "12",
     name: "Soranib Tablet 30'S",
     image: "/images/honey.jpg",
     description:

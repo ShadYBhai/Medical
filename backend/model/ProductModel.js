@@ -1,5 +1,16 @@
-const { model, Schema } = require("mongoose");
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
+const reviewSchema = mongoose.Schema(
+  {
+    name: { type: String },
+    rating: { type: Number },
+    comment: { type: String },
+  },
+  {
+    timestamps: true,
+  }
+);
 const productSchema = new Schema(
   {
     user: {
@@ -50,6 +61,8 @@ const productSchema = new Schema(
       default: 0,
     },
 
+    reviews: [reviewSchema],
+
     subcategory: {
       type: Schema.Types.ObjectId,
       ref: "subcategory",
@@ -63,4 +76,7 @@ const productSchema = new Schema(
   },
   { timestamps: true }
 );
-module.exports = model("product", productSchema);
+
+const Product = mongoose.model("Product", productSchema);
+
+export default Product;
