@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import users from "./data/users.js";
 import products from "./data/products.js";
@@ -17,9 +16,9 @@ const importData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
 
-    const createdUser = await User.insertMany(users);
+    const createdUsers = await User.insertMany(users);
 
-    const adminUser = createdUser[0]._id;
+    const adminUser = createdUsers[0]._id;
 
     const sampleProducts = products.map((product) => {
       return { ...product, user: adminUser };
@@ -27,22 +26,25 @@ const importData = async () => {
 
     await Product.insertMany(sampleProducts);
 
-    console.log("data imported");
+    console.log("Data Imported!");
     process.exit();
   } catch (error) {
-    `ERROR FROM SCHEMA=${error}`;
+    console.error(`${error}`);
+    process.exit(1);
   }
 };
+
 const destroyData = async () => {
   try {
     await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
 
-    console.log("data destroyed!!");
+    console.log("Data Destroyed!");
     process.exit();
   } catch (error) {
-    `ERROR FROM SCHEMA=${error}`;
+    console.error(`${error}`);
+    process.exit(1);
   }
 };
 
@@ -51,4 +53,3 @@ if (process.argv[2] === "-d") {
 } else {
   importData();
 }
-console.log(process.argv);

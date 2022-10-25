@@ -27,7 +27,7 @@ const productSchema = new Schema(
       ref: "brand",
     },
     category: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "category",
       required: true,
     },
@@ -63,10 +63,10 @@ const productSchema = new Schema(
 
     reviews: [reviewSchema],
 
-    subcategory: {
-      type: Schema.Types.ObjectId,
-      ref: "subcategory",
-    },
+    // subcategory: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "subcategory",
+    // },
 
     is_delete: {
       type: Number,
