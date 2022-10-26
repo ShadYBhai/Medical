@@ -5,6 +5,7 @@ import AsyncHandler from "express-async-handler";
 //@DESCRIPTION : FETCH ALL PRODUCTS
 //@ROUTE: GET /API/PRODUCTS
 //@ACCESS: PUBLIC ROUTE
+
 const router = express.Router();
 
 router.get(
@@ -14,9 +15,11 @@ router.get(
     res.status(200).json(products);
   })
 );
-//@DESCRIPTION : FETCH SINGLE PRODUCT
+
+//@DESCRIPTION : FETCH SIN GLE PRODUCT
 //@ROUTE: GET /API/PRODUCTS/:ID
 //@ACCESS: PUBLIC ROUTE
+
 router.get(
   "/:id",
   AsyncHandler(async (req, res) => {
