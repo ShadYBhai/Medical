@@ -1,3 +1,9 @@
+// import {
+//   PRODUCT_LIST_FAIL,
+//   PRODUCT_LIST_SUCCESS,
+//   PRODUCT_LIST_REQUEST,
+// } from "../constants/productConstants";
+
 export const productReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case "PRODUCT_LIST_REQUEST":
@@ -11,3 +17,20 @@ export const productReducer = (state = { products: [] }, action) => {
       return state;
   }
 };
+
+// export const productDetailsReducer = (
+//   state = { product: { reviews: [] } },
+//   action
+// ) => {
+//   switch (action.type) {
+//     case "PRODUCT_DETAILS_REQUEST":
+//       return { loading: true };
+//     case "PRODUCT_DETAILS_SUCESS":
+//       return { loading: false, products: action.payload };
+//     case "PRODUCT_DETAILS_FAIL":
+//       return { loading: false, error: action.payload };
+
+//     default:
+//       return state;
+//   }
+// };

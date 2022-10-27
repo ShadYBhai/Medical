@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
+import Message from "../components/Message.js";
+import Loader from "../components/Loader.js";
 
 const ProductsScreen = () => {
   const dispatch = useDispatch();
@@ -20,19 +22,17 @@ const ProductsScreen = () => {
     <>
       <H1>Shop By Products</H1>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant="danger">{error}</Message>
       ) : (
-        <Col>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={11} md={5} lg={5} xl={2}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-        </Col>
+        <Row>
+          {products.map((product) => (
+            <Col key={product._id} sm={11} md={5} lg={5} xl={2}>
+              <Product product={product} />
+            </Col>
+          ))}
+        </Row>
       )}
     </>
   );
