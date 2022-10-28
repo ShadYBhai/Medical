@@ -24,7 +24,7 @@ const HeroComponent = () => {
         </h2>
       </Head>
       <Buttons>
-        <Link to="/categories">
+        <Link to="/all">
           <motion.button variants={fade} className="b1">
             BUY
           </motion.button>

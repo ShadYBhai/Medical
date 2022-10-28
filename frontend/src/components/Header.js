@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   font-weight: 700;
   /* color: #000000; */
   color: #ffffff;
-  background-color: #000000;
+  background-color: #221e1e;
 `;
 const Left = styled.div`
   margin-left: 1rem;
