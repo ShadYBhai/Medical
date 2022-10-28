@@ -45,6 +45,7 @@ const Wrapper = styled.div`
   /* color: #000000; */
   color: #ffffff;
   background-color: #221e1e;
+  /* background: #a3d9ab; */
 `;
 const Left = styled.div`
   margin-left: 1rem;

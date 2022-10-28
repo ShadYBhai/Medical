@@ -12,7 +12,7 @@ import {
   Card,
   ListGroupItem,
 } from "react-bootstrap";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = () => {
   const { id } = useParams();
@@ -37,7 +37,13 @@ const CartScreen = () => {
     }
   }, [dispatch, id, qty]);
 
-  const removeFromCartHandler = (id) => {};
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const checkoutHandler = (id) => {
+    history(`/login?redirect=shipping`);
+  };
 
   return (
     <>
@@ -108,6 +114,21 @@ const CartScreen = () => {
                   Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   ) items
                 </h2>
+                $
+                {cartItems
+                  .reduce((acc, item) => acc + item.qty * item.price, 0)
+                  .toFixed(2)}
+              </ListGroupItem>
+
+              <ListGroupItem>
+                <Button
+                  type="button"
+                  className="btn-block"
+                  disabled={cartItems.length === 0}
+                  onClick={checkoutHandler}
+                >
+                  Proceed To Checkout
+                </Button>
               </ListGroupItem>
             </ListGroup>
           </Card>
