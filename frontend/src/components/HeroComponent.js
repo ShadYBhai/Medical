@@ -49,12 +49,12 @@ const Head = styled.div`
   margin-bottom: 3.5rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   h1 {
-    /* color: rgb(50, 49, 49); */
-    color: white;
+    color: rgb(50, 49, 49);
+    /* color: white; */
   }
   h2 {
-    /* color: rgb(50, 49, 49); */
-    color: white;
+    color: rgb(50, 49, 49);
+    /* color: white; */
     margin-top: 2rem;
   }
 `;

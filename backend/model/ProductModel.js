@@ -13,6 +13,11 @@ const reviewSchema = mongoose.Schema(
 );
 const productSchema = new Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    },
+
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
