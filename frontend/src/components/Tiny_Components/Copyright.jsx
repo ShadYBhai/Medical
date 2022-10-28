@@ -11,7 +11,7 @@ const Copyright = (props) => {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mc.com/" sx={{ fontSize: "11px" }}>
-        medical central
+        Medical Central
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
