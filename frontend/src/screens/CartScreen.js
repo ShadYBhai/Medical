@@ -51,12 +51,12 @@ const CartScreen = () => {
         <Col md={8}>
           <h1>Shopping Cart</h1>
           {cartItems.length === 0 ? (
-            <h1>
+            <h3>
               Your Cart Is Empty{" "}
               <button>
                 <Link to="/">Go Back</Link>
               </button>
-            </h1>
+            </h3>
           ) : (
             <ListGroup variant="flush">
               {cartItems.map((item) => (
