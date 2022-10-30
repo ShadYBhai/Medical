@@ -47,16 +47,20 @@ const CartScreen = () => {
 
   return (
     <>
-      <Row>
-        <Col md={8}>
-          <h1>Shopping Cart</h1>
+      <Row className=" mx-5">
+        <Col md={8} className="py-5">
+          <h2>Shopping Cart</h2>
           {cartItems.length === 0 ? (
-            <h3>
-              Your Cart Is Empty{" "}
-              <button>
-                <Link to="/">Go Back</Link>
-              </button>
-            </h3>
+            <div>
+              <h3>Your Cart Is Empty </h3>
+              <>
+                <Button>
+                  <Link to="/" style={{ color: "white" }}>
+                    Go Back
+                  </Link>
+                </Button>
+              </>
+            </div>
           ) : (
             <ListGroup variant="flush">
               {cartItems.map((item) => (
@@ -107,7 +111,7 @@ const CartScreen = () => {
           )}
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className="py-5">
             <ListGroup variant="flush">
               <ListGroupItem>
                 <h2>

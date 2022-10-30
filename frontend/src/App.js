@@ -11,6 +11,7 @@ import SignUp from "./components/SignUp";
 // import OrderScreen from "./screens/OrderScreen";
 import ProductsScreen from "./screens/ProductsScreen";
 import CartScreen from "./screens/CartScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
       <GlobalStyles />
       <Header />
       <Routes>
+        <Route path="/login" element={<LoginScreen />} />
         <Route path="/product/:id" element={<IndivisualProductScreen />} />
         <Route path="/" element={<HomeScreen />} />
         <Route path="/sell" element={<SellPage />} />
         <Route path="/category/:id" element={<IndivisualCategoryScreen />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/signup" element={<SignUp />} />
         {/* <Route path="/orders" element={<OrderScreen />} /> */}
         <Route path="/product/:id" element={<ProductsScreen />} />

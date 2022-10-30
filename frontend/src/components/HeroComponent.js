@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fade } from "../Animation";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const HeroComponent = () => {
   const navigate = useNavigate();
@@ -25,19 +26,14 @@ const HeroComponent = () => {
       </Head>
       <Buttons>
         <Link to="/all">
-          <motion.button variants={fade} className="b1">
+          <Button variants={fade} className="b1">
             BUY
-          </motion.button>
+          </Button>
         </Link>
 
-        <motion.button
-          onClick={navigateSell}
-          variants={fade}
-          button
-          className="b2"
-        >
+        <Button onClick={navigateSell} variants={fade} button className="b2">
           SELL
-        </motion.button>
+        </Button>
       </Buttons>
     </>
   );
