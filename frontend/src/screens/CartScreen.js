@@ -49,10 +49,10 @@ const CartScreen = () => {
     <>
       <Row className=" mx-5">
         <Col md={8} className="py-5">
-          <h2>Shopping Cart</h2>
+          <h3>Shopping Cart</h3>
           {cartItems.length === 0 ? (
             <div>
-              <h3>Your Cart Is Empty </h3>
+              <Message>Your Cart Is Empty </Message>
               <>
                 <Button>
                   <Link to="/" style={{ color: "white" }}>

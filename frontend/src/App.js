@@ -12,6 +12,7 @@ import SignUp from "./components/SignUp";
 import ProductsScreen from "./screens/ProductsScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <Routes>
+        <Route path="/register" element={<RegisterScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/product/:id" element={<IndivisualProductScreen />} />
         <Route path="/" element={<HomeScreen />} />
