@@ -18,11 +18,13 @@ import {
 // import category from "../category";
 import Category from "../components/Category";
 import axios from "axios";
+import Product from "../components/Product";
+import Loader from "../components/Loader";
 
 const IndivisualCategoryScreen = () => {
   // const { id } = useParams();
 
-  const [category, setCategory] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const { id } = useParams();
 
@@ -30,17 +32,13 @@ const IndivisualCategoryScreen = () => {
     const fetchCategory = async () => {
       const { data } = await axios.get(`/api/productsByCategory/${id}`);
       console.log(data);
-      setCategory(data);
+      setProducts(data);
     };
 
     fetchCategory();
   }, [id]);
+  console.log(products, "products");
 
-  // const cat = category.find((p) => p._id === id);
-
-  // if (!cat) return null;
-
-  // console.log(cat);
 
   return (
     <Container>
@@ -49,12 +47,12 @@ const IndivisualCategoryScreen = () => {
       </Link>
       <Col>
         <Row>
-          {category &&
-            category.map((category) => (
-              <Col key={category._id} sm={11} md={5} lg={5} xl={2}>
-                <Category category={category} />
+          {products ?
+            products.map((product) => (
+              <Col key={product._id} sm={11} md={5} lg={5} xl={2}>
+                <Product product={product} />
               </Col>
-            ))}
+            )) : <Loader />}
         </Row>
       </Col>
     </Container>
