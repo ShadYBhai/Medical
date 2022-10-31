@@ -4,8 +4,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavDropdown } from "react-bootstrap";
 
 const Header = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    console.log("logout");
+  };
+
   return (
     <header>
       <Wrapper>
@@ -18,19 +27,52 @@ const Header = () => {
                 </Navbar.Brand>
               </Link>
             </Left>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-            <Nav style={{ marginLeft: "auto" }}>
-              <Link to="/cart">
-                <Nav style={{ color: "white", marginRight: "3rem" }}>
-                  <i className="fas fa-shopping-cart"> Cart</i>
-                </Nav>
-              </Link>
+            <Link to="/cart">
+              <Nav
+                style={{
+                  color: "white",
+                  marginRight: "3rem",
+                  textAlign: "center",
+                }}
+              >
+                <i style={{ margin: "auto" }} className="fas fa-shopping-cart">
+                  Cart
+                </i>
+              </Nav>
+            </Link>
+            {userInfo ? (
+              <NavDropdown
+                title={
+                  <span style={{ color: "white" }}>
+                    {" "}
+                    <i className="fas fa-user"></i> {userInfo.name}
+                  </span>
+                }
+                id="username"
+              >
+                <Link
+                  to="/profile"
+                  style={{
+                    margin: "auto",
+                    padding: "0rem",
+                    display: "flex",
+                  }}
+                >
+                  <NavDropdown.Item>Profile</NavDropdown.Item>
+                </Link>
+                <NavDropdown.Item onClick={logoutHandler}>
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
               <Link to="/login">
                 <Nav style={{ color: "white" }}>
-                  <i className="fas fa-user"> SIGN IN</i>
+                  <i className="fas fa-user">SIGN IN</i>
                 </Nav>
               </Link>
-            </Nav>
+            )}
           </Container>
         </Navbar>
       </Wrapper>
@@ -40,6 +82,7 @@ const Header = () => {
 
 const Wrapper = styled.div`
   /* display: flex; */
+  margin: auto;
   justify-content: space-between;
   font-weight: 700;
   /* color: #000000; */

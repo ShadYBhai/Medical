@@ -69,7 +69,13 @@ const GlobalStyle = createGlobalStyle`
 h1{
     color: black;
 }
-
+.navbar-nav .nav-link {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+:root {
+--bs-body-line-height: 1.5;
+}
 `;
 
 export default GlobalStyle;

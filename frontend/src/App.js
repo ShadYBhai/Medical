@@ -29,7 +29,7 @@ function App() {
         {/* <Route path="/orders" element={<OrderScreen />} /> */}
         <Route path="/product/:id" element={<ProductsScreen />} />
         <Route path="/cart/:id" element={<CartScreen />} />
-        <Route path="/cart/" element={<CartScreen />} />
+        <Route path="/cart" element={<CartScreen />} />
         <Route path="/all" element={<ProductsScreen />} />
       </Routes>
       <div style={{ marginTop: "10rem" }}>
