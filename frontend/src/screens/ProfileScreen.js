@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserDetails } from "../actions/userActions";
+import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import Loader from "../components/Loader";
 import styled from "styled-components";
 import Message from "../components/Message";
@@ -14,7 +14,6 @@ const ProfileScreen = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const location = useLocation();
   const history = useNavigate();
 
   const dispatch = useDispatch();
@@ -25,6 +24,9 @@ const ProfileScreen = () => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { success } = userUpdateProfile;
 
   useEffect(() => {
     if (!userInfo) {
@@ -44,7 +46,7 @@ const ProfileScreen = () => {
     if (password !== confirmPassword) {
       setMessage("Password do not match");
     } else {
-      //DISPATCH UPDATE PROFILE
+      dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
   };
 
@@ -54,8 +56,9 @@ const ProfileScreen = () => {
         <Col md={3}>
           <h1>User Profile</h1>
           {message && <Message>{message}</Message>}
-          {}
           {error && <Message>{"Please Enter Correct Details"}</Message>}
+          {success && <Message>{"Profile Updated"}</Message>}
+
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
@@ -96,7 +99,7 @@ const ProfileScreen = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Button className="my-3" type="submit" variant="primary">
+            <Button type="submit" variant="primary">
               Update
             </Button>
           </Form>

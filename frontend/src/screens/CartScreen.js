@@ -41,7 +41,7 @@ const CartScreen = () => {
     dispatch(removeFromCart(id));
   };
 
-  const checkoutHandler = (id) => {
+  const checkoutHandler = () => {
     history(`/login?redirect=shipping`);
   };
 
