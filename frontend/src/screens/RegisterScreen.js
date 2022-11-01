@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../actions/userActions";
 import Loader from "../components/Loader";
@@ -42,7 +42,7 @@ const RegisterScreen = () => {
   return (
     <Login>
       <FormContainer>
-        <h1>Sign In</h1>
+        <h1>Register</h1>
         {message && <Message>{message}</Message>}
 
         {error && <Message>{"Please Enter Correct Details"}</Message>}

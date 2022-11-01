@@ -55,16 +55,10 @@ const Header = () => {
                 }
                 id="username"
               >
-                <Link
-                  to="/profile"
-                  style={{
-                    margin: "auto",
-                    padding: "0rem",
-                    display: "flex",
-                  }}
-                >
-                  <NavDropdown.Item>Profile</NavDropdown.Item>
-                </Link>
+                <NavDropdown.Item>
+                  <Link to="/profile">Profile</Link>
+                </NavDropdown.Item>
+
                 <NavDropdown.Item onClick={logoutHandler}>
                   Logout
                 </NavDropdown.Item>
