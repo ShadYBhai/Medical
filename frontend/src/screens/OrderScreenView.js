@@ -7,18 +7,20 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 // import { USER_DETAILS_RESET } from "../constants/userConstants";
 // import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 import Loader from "../components/Loader";
+import { PayPalButton } from "react-paypal-button-v2";
+
 import {
   getOrderDetails,
   payOrder,
   deliverOrder,
 } from "../actions/orderActions";
 
-const OrderScreenView = () => {
+const OrderScreenView = (sdkReady, setSdkReady, orderPay, loadingPay) => {
   const dispatch = useDispatch();
   const history = useNavigate();
   const { id } = useParams();
 
-  // const id = id;
+  // const [sdkReady, setSdkReady] = useState(false);
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
@@ -39,6 +41,9 @@ const OrderScreenView = () => {
     history("/payment");
   }
 
+  // const orderPay = useSelector((state) => state.orderPay);
+  // const { success: successPay, loading: loadingPay } = orderPay;
+
   // useEffect(() => {
   //   dispatch(getOrderDetails(id));
   // });
@@ -48,6 +53,12 @@ const OrderScreenView = () => {
   //     dispatch(getOrderDetails(id));
   //   }
   // }, [dispatch, order, id]);
+
+  const successPaymentHandler = (paymentResult) => {
+    console.log(paymentResult);
+    dispatch(payOrder(id));
+  };
+
   return (
     <>
       {order && (
@@ -157,6 +168,19 @@ const OrderScreenView = () => {
                       <Col>${order.totalPrice}</Col>
                     </Row>
                   </ListGroup.Item>
+                  {!order.isPaid && (
+                    <ListGroup.Item>
+                      {loadingPay && <Loader />}
+                      {!sdkReady ? (
+                        <Loader />
+                      ) : (
+                        <PayPalButton
+                          amount={order.totalPrice}
+                          onSuccess={successPaymentHandler}
+                        />
+                      )}
+                    </ListGroup.Item>
+                  )}
                 </ListGroup>
               </Card>
             </Col>
