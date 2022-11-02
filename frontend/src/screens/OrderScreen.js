@@ -10,6 +10,7 @@ import { getOrderDetails } from "../actions/orderActions";
 import Loader from "../components/Loader";
 import OrderScreenView from "./OrderScreenView";
 import axios from "axios";
+import { ORDER_PAY_RESET } from "../constants/orderConstants";
 
 const OrderScreen = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ const OrderScreen = () => {
     };
 
     if (!order || successPay) {
+      dispatch({ type: ORDER_PAY_RESET });
       dispatch(getOrderDetails(id));
     } else if (!order.isPaid) {
       if (!window.paypal) {

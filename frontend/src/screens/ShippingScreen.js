@@ -18,13 +18,22 @@ const ShippingScreen = () => {
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
   const [country, setCountry] = useState(shippingAddress.country);
 
-  const dispatch = useDispatch();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, postalCode, country }));
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let formData = new FormData(event.target);
+    const formDataObj = Object.fromEntries(formData.entries());
+    // dispatch(createSellOrder(formDataObj));
+    console.log(formDataObj);
+    dispatch(saveShippingAddress(formDataObj));
     history("/payment");
   };
+
+  const dispatch = useDispatch();
+
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   dispatch(saveShippingAddress({ address, city, postalCode, country }));
+  // };
 
   return (
     <Div>
@@ -34,7 +43,7 @@ const ShippingScreen = () => {
         </CS>
 
         <h1>Shipping</h1>
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={handleSubmit}>
           <Form.Group controlId="address">
             <Form.Label>Address</Form.Label>
             <Form.Control
@@ -42,6 +51,7 @@ const ShippingScreen = () => {
               placeholder="Enter Address"
               value={address}
               required
+              name="address"
               onChange={(e) => setAddress(e.target.value)}
             ></Form.Control>
           </Form.Group>
@@ -52,6 +62,7 @@ const ShippingScreen = () => {
               type="text"
               placeholder="Enter City"
               value={city}
+              name="city"
               required
               onChange={(e) => setCity(e.target.value)}
             ></Form.Control>
@@ -63,6 +74,7 @@ const ShippingScreen = () => {
               type="text"
               placeholder="Enter Postal Code"
               value={postalCode}
+              name="postalCode"
               required
               onChange={(e) => setPostalCode(e.target.value)}
             ></Form.Control>
@@ -74,6 +86,7 @@ const ShippingScreen = () => {
               type="text"
               placeholder="Enter Country"
               value={country}
+              name="country"
               required
               onChange={(e) => setCountry(e.target.value)}
             ></Form.Control>

@@ -56,7 +56,7 @@ const OrderScreenView = (sdkReady, setSdkReady, orderPay, loadingPay) => {
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
-    dispatch(payOrder(id));
+    dispatch(payOrder(id, paymentResult));
   };
 
   return (
