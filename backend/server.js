@@ -31,6 +31,10 @@ app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/sell-orders", sellOrderRoutes);
 
+app.get("/api/config/paypal", (req, res) =>
+  res.send(process.env.PAYPAL_CLIENT_ID)
+);
+
 app.get("/api/category", async (req, res) => {
   const cat = await Category.find();
   res.json(cat);
