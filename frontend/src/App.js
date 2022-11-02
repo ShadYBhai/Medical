@@ -19,6 +19,7 @@ import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import Confirmation from "./screens/ConfirmationScreen";
+import SellShippingScreen from "./screens/SellShippingScreen";
 
 function App() {
   return (
