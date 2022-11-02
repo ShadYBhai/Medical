@@ -7,6 +7,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 // import { USER_DETAILS_RESET } from "../constants/userConstants";
 // import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 import Loader from "../components/Loader";
+import {
+  getOrderDetails,
+  payOrder,
+  deliverOrder,
+} from "../actions/orderActions";
 
 const OrderScreenView = () => {
   const dispatch = useDispatch();
@@ -15,8 +20,16 @@ const OrderScreenView = () => {
 
   // const id = id;
 
-  const { order, loading, error } = useSelector((state) => state.orderDetails);
-  // const { order, loading, error } = orderDetails;
+  const orderDetails = useSelector((state) => state.orderDetails);
+  const { order, loading, error } = orderDetails;
+  if (!loading) {
+    const addDecimals = (num) => {
+      return (Math.round(num * 100) / 100).toFixed(2);
+    };
+    order.itemsPrice = addDecimals(
+      order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+    );
+  }
 
   const cart = useSelector((state) => state.cart);
 
@@ -25,6 +38,16 @@ const OrderScreenView = () => {
   } else if (!cart.paymentMethod) {
     history("/payment");
   }
+
+  // useEffect(() => {
+  //   dispatch(getOrderDetails(id));
+  // });
+
+  // useEffect(() => {
+  //   if (!order || order._id !== id) {
+  //     dispatch(getOrderDetails(id));
+  //   }
+  // }, [dispatch, order, id]);
   return (
     <>
       {order && (
@@ -36,18 +59,36 @@ const OrderScreenView = () => {
                 <ListGroup.Item>
                   <h2>Shipping</h2>
                   <p>
+                    <strong>Name: </strong>
+                    {order.user.name}
+                  </p>
+                  <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                  <p>
                     <strong>Address:</strong>
                     {order.shippingAddress.address},{" "}
                     {order.shippingAddress.city}{" "}
                     {order.shippingAddress.postalCode},{" "}
                     {order.shippingAddress.country}
                   </p>
+                  {order.isDelivered ? (
+                    <Message>Deliverd On {order.deliveredAt}</Message>
+                  ) : (
+                    <Message>Not Deliverd</Message>
+                  )}
                 </ListGroup.Item>
 
                 <ListGroup.Item>
-                  <h2>Payment Method</h2>
-                  <strong>Method: </strong>
-                  {order.paymentMethod}
+                  <p>
+                    <h2>Payment Method</h2>
+                    <strong>Method: </strong>
+                    {order.paymentMethod}
+                  </p>
+
+                  {order.isPaid ? (
+                    <Message>Paid On {order.paidAt}</Message>
+                  ) : (
+                    <Message>Not Paid</Message>
+                  )}
                 </ListGroup.Item>
 
                 <ListGroup.Item>
@@ -88,7 +129,9 @@ const OrderScreenView = () => {
               <Card>
                 <ListGroup variant="flush">
                   <ListGroup.Item>
-                    <h2>Order Summary</h2>
+                    <h2>Payment Method</h2>
+                    <strong>Method:</strong>
+                    {order.paymentMethod}
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <Row>
@@ -114,7 +157,6 @@ const OrderScreenView = () => {
                       <Col>${order.totalPrice}</Col>
                     </Row>
                   </ListGroup.Item>
-                  <Button>PAYPAL</Button>
                 </ListGroup>
               </Card>
             </Col>
