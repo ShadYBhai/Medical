@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card, CardContent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-const Conformation = () => {
+const Confirmation = () => {
   const navigate = useNavigate();
 
   const handelClick = () => {
@@ -10,7 +10,7 @@ const Conformation = () => {
   };
 
   return (
-    <ConformationDiv>
+    <ConfirmationDiv>
       <Card>
         <CardContent>
           <h1>Thank You So Much for selling your Mediciens</h1>
@@ -22,11 +22,11 @@ const Conformation = () => {
         </CardContent>
         <Button onClick={handelClick}>Back to Website</Button>
       </Card>
-    </ConformationDiv>
+    </ConfirmationDiv>
   );
 };
 
-const ConformationDiv = styled.div`
+const ConfirmationDiv = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -46,4 +46,4 @@ const Button = styled.button`
   margin-left: 15rem;
 `;
 
-export default Conformation;
+export default Confirmation;
