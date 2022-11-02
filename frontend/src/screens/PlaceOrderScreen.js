@@ -4,6 +4,9 @@ import CheckoutStep from "../components/CheckoutStep";
 import React, { useState, useEffect } from "react";
 import Message from "../components/Message";
 import { Link, useNavigate } from "react-router-dom";
+import { createOrder } from "../actions/orderActions";
+// import { USER_DETAILS_RESET } from "../constants/userConstants";
+// import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
@@ -32,29 +35,30 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice)
   ).toFixed(2);
 
-  //   const orderCreate = useSelector((state) => state.orderCreate);
-  //   const { order, success, error } = orderCreate;
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
 
-  //   useEffect(() => {
-  //     if (success) {
-  //       history(`/order/${order._id}`);
-  //       dispatch({ type: USER_DETAILS_RESET });
-  //       dispatch({ type: ORDER_CREATE_RESET });
-  //     }
-  //     // eslint-disable-next-line
-  //   }, [history, success]);
+  useEffect(() => {
+    if (success) {
+      history(`/order/${order._id}`);
+      // dispatch({ type: USER_DETAILS_RESET });
+      // dispatch({ type: ORDER_CREATE_RESET });
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
 
   const placeOrderHandler = () => {
-    dispatch();
-    //   createOrder({
-    //     orderItems: cart.cartItems,
-    //     shippingAddress: cart.shippingAddress,
-    //     paymentMethod: cart.paymentMethod,
-    //     itemsPrice: cart.itemsPrice,
-    //     shippingPrice: cart.shippingPrice,
-    //     taxPrice: cart.taxPrice,
-    //     totalPrice: cart.totalPrice,
-    //   })
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      })
+    );
   };
 
   return (
@@ -143,7 +147,7 @@ const PlaceOrderScreen = () => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                {/* {error && <Message variant="danger">{error}</Message>} */}
+                {error && <Message variant="danger">{error}</Message>}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button

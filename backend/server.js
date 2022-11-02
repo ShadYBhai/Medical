@@ -9,6 +9,7 @@ import userRoutes from "./routes/userRoutes.js";
 import Product from "./model/ProductModel.js";
 import Category from "./model/Category.js";
 // const Product = require("./model/ProductModel");
+import orderRoutes from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -26,6 +27,8 @@ app.use("/api/users", userRoutes);
 
 app.use("/api/products", productRoutes);
 
+app.use("/api/orders", orderRoutes);
+
 app.get("/api/category", async (req, res) => {
   const cat = await Category.find();
   res.json(cat);
@@ -34,7 +37,6 @@ app.get("/api/category/:id", async (req, res) => {
   try {
     const cat = await Category.find({ category: req.params.id });
     res.json(cat);
-
   } catch (error) {
     res.json(error.message);
     console.log(error.message);

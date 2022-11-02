@@ -6,6 +6,11 @@ const getProducts = asyncHandler(async (req, res) => {
 
   res.json(products);
 });
+const addProducts = asyncHandler(async (req, res) => {
+  const products = await Product.create(req.body);
+
+  res.json(products);
+});
 
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
@@ -16,4 +21,4 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
-export { getProductById, getProducts };
+export { getProductById, getProducts, addProducts };
