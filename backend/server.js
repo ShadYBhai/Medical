@@ -10,6 +10,7 @@ import Product from "./model/ProductModel.js";
 import Category from "./model/Category.js";
 // const Product = require("./model/ProductModel");
 import orderRoutes from "./routes/orderRoutes.js";
+import sellOrderRoutes from "./routes/sellOrderRoutes.js";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
 app.use("/api/orders", orderRoutes);
+app.use("/api/sell-orders", sellOrderRoutes);
 
 app.get("/api/config/paypal", (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)
