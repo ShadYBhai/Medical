@@ -40,8 +40,8 @@ function SellPage() {
     const formDataObj = Object.fromEntries(formData.entries());
     formDataObj['expiry'] = date.$d;
     formDataObj['unit'] = element;
-    dispatch(createSellOrder(formDataObj));
-    navigate("/sell/shipping");
+    dispatch(createSellOrder(formDataObj, navigate));
+
   };
 
   const handleDateChange = (newDate) => {

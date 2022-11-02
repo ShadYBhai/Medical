@@ -12,7 +12,7 @@ import {
 import { pageAnimation } from './../Animation';
 import { payOrder } from './orderActions';
 
-export const createSellOrder = (order) => async (dispatch, getState) => {
+export const createSellOrder = (order, cb) => async (dispatch, getState) => {
   try {
     dispatch({
       type: SELL_ORDER_CREATE_REQUEST,
@@ -35,6 +35,7 @@ export const createSellOrder = (order) => async (dispatch, getState) => {
       type: SELL_ORDER_CREATE_SUCCESS,
       payload: order,
     });
+    cb("/sell/shipping");
   } catch (error) {
     console.log(error.message);
 
