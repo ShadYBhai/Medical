@@ -18,6 +18,7 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import Confirmation from "./screens/ConfirmationScreen";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/shipping" element={<ShippingScreen />} />
         <Route path="/payment" element={<PaymentScreen />} />
         <Route path="/placeorder" element={<PlaceOrderScreen />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
       <div style={{ marginTop: "10rem" }}>
         <Footer />
