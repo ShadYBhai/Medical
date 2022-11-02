@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card, CardContent } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-const Confirmation = () => {
+const ConfirmationScreen = () => {
   const navigate = useNavigate();
 
   const handelClick = () => {
@@ -46,4 +46,4 @@ const Button = styled.button`
   margin-left: 15rem;
 `;
 
-export default Confirmation;
+export default ConfirmationScreen;
