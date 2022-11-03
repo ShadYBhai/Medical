@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { NavDropdown } from "react-bootstrap";
 import { logout } from "../actions/userActions";
-
+import { LinkContainer } from "react-router-bootstrap";
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -58,6 +58,10 @@ const Header = () => {
                 <NavDropdown.Item>
                   <Link to="/profile">Profile</Link>
                 </NavDropdown.Item>
+
+                <LinkContainer to="sellorders">
+                  <NavDropdown.Item>Sell Orders</NavDropdown.Item>
+                </LinkContainer>
 
                 <NavDropdown.Item onClick={logoutHandler}>
                   Logout

@@ -38,10 +38,6 @@ const ShippingScreen = () => {
   return (
     <Div>
       <FormContainer>
-        <CS>
-          <CheckoutStep step1 step2 />
-        </CS>
-
         <h1>Shipping</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="address">
@@ -103,10 +99,6 @@ const ShippingScreen = () => {
 
 const Div = styled.div`
   margin-top: 2rem;
-`;
-
-const CS = styled.div`
-  margin-bottom: 2rem;
 `;
 
 export default ShippingScreen;

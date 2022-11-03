@@ -24,10 +24,6 @@ const SellShippingScreen = () => {
   return (
     <Div>
       <FormContainer>
-        <CS>
-          <CheckoutStep step1 step2 />
-        </CS>
-
         <h1>Shipping</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="address">

@@ -23,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     button{
-        font-weight: bold;
+        ${
+          "" /* font-weight: bold;
         font-size: 1.1rem;
         cursor: pointer;
         padding:1rem 2rem ;
@@ -31,13 +32,16 @@ const GlobalStyle = createGlobalStyle`
         background: transparent;
         color: #010101;
         transition: all 0.5s ease;
-        font-family: 'Inter',sans-serif;
+        font-family: 'Inter',sans-serif; */
+        }
 
-
+${
+  "" /* 
         &:hover{
             background-color: #ff0000;
         }
-        
+         */
+}
     }
     ${
       "" /* h2{
