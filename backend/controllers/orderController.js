@@ -74,4 +74,17 @@ const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.json(orders);
 });
+
+const createProductReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body;
+
+  const product = await Product.findById(req.params.id);
+
+  if (product) {
+    const alreadyReviewed = products.reviews.find(
+      (r) => r.user.toString() === req.user._id.toString()
+    );
+  }
+});
+
 export { addOrderItems, getOrderById, updateOrderToPaid, getMyOrders };

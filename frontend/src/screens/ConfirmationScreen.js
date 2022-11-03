@@ -32,6 +32,7 @@ const ConfirmationDiv = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 6rem;
   h1 {
     margin-top: 2rem;
   }
