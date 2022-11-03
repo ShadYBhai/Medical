@@ -4,7 +4,6 @@ import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/formContainer";
 import styled from "styled-components";
-import CheckoutStep from "../components/CheckoutStep";
 import { saveSellShippingAddress } from "../actions/sellOrderActions";
 
 const SellShippingScreen = () => {
