@@ -78,7 +78,7 @@ function SellPage() {
               <Grid item xs={12}>
                 <TextField
                   autoComplete="given-medicine-name"
-                  name="medicineName"
+                  name="name"
                   required
                   fullWidth
                   id="medicineName"

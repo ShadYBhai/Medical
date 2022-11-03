@@ -1,5 +1,5 @@
 import express from "express";
-
+// import morgan from "morgan";
 // import category from "./data/category.js";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
@@ -18,9 +18,9 @@ connectDB();
 
 const app = express();
 
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV === "development") {
+//   app.use(morgan("dev"));
+// }
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

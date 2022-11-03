@@ -51,42 +51,43 @@ export const createSellOrder = (order, cb) => async (dispatch, getState) => {
     });
   }
 };
-export const saveSellShippingAddress = (shipping) => async (dispatch, getState) => {
-  try {
-    dispatch({
-      type: SELL_ORDER_ADDRESS_REQUEST,
-    });
+export const saveSellShippingAddress =
+  (shipping) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: SELL_ORDER_ADDRESS_REQUEST,
+      });
 
-    const {
-      allSellOrder: { sellOrder },
-      userLogin: { userInfo },
-    } = getState();
-    let payload = sellOrder;
-    console.log(sellOrder);
-    payload["shippingAddress"] = shipping;
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
-    const { data } = await axios.post(`/api/sell-orders`, payload, config);
+      const {
+        allSellOrder: { sellOrder },
+        userLogin: { userInfo },
+      } = getState();
+      let payload = sellOrder;
+      console.log(sellOrder);
+      payload["shippingAddress"] = shipping;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      const { data } = await axios.post(`/api/sell-orders`, payload, config);
 
-    dispatch({
-      type: SELL_ORDER_ADDRESS_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    console.log(error.message);
-    dispatch({
-      type: SELL_ORDER_ADDRESS_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
+      dispatch({
+        type: SELL_ORDER_ADDRESS_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.message);
+      dispatch({
+        type: SELL_ORDER_ADDRESS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
 
 export const getSellDetails = (id) => async (dispatch, getState) => {
   try {

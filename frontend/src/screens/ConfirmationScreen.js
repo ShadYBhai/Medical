@@ -16,8 +16,8 @@ const ConfirmationScreen = () => {
           <h1>Thank You So Much for selling your Mediciens</h1>
           <h2>You are Helping in Bringing the Change in The World</h2>
           <p>
-            Once our Pharmacist Approve your Medicines You Will Recive the
-            Promised Amount.
+            We will get back to you in two working days. Once our Pharmacist
+            approve your medicines you will recive the notification.
           </p>
         </CardContent>
         <Button variant="primary" onClick={handelClick}>

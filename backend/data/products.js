@@ -1,7 +1,7 @@
 const products = [
   {
-    name: "Soranib Tablet 30'S",
-    image: "/images/honey.jpg",
+    name: "D Protin Chocolate Powder 500 gm",
+    image: "/images/d_protin_chocolate_powder_500_gm_0.jpg",
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
