@@ -25,6 +25,7 @@ const updatesellOrderItems = asyncHandler(async (req, res) => {
 
 const getSellOrders = asyncHandler(async (req, res) => {
   try {
+    console.log(req.user._id, "req.user._id");
     const order = await SellOrders.find({ user: req.user._id });
     res.status(201).json(order);
   } catch (error) {
