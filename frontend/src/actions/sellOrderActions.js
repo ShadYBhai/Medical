@@ -7,10 +7,13 @@ import {
   SELL_ORDER_ADDRESS_REQUEST,
   SELL_ORDER_ADDRESS_SUCCESS,
   SELL_ORDER_ADDRESS_FAIL,
+  SELL_DETAILS_FAIL,
+  SELL_DETAILS_SUCCESS,
+  SELL_DETAILS_REQUEST,
 } from "../constants/sellOrderConstants";
 // import { logout } from "./userActions";
-import { pageAnimation } from './../Animation';
-import { payOrder } from './orderActions';
+import { pageAnimation } from "./../Animation";
+import { payOrder } from "./orderActions";
 
 export const createSellOrder = (order, cb) => async (dispatch, getState) => {
   try {
@@ -48,78 +51,79 @@ export const createSellOrder = (order, cb) => async (dispatch, getState) => {
     });
   }
 };
-export const saveSellShippingAddress = (shipping) => async (dispatch, getState) => {
+export const saveSellShippingAddress =
+  (shipping) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: SELL_ORDER_ADDRESS_REQUEST,
+      });
+
+      const {
+        sellOrder,
+        userLogin: { userInfo },
+      } = getState();
+      let payload = sellOrder;
+      payload["shippingAddress"] = shipping;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      const { data } = await axios.post(`/api/sell-orders`, payload, config);
+
+      dispatch({
+        type: SELL_ORDER_ADDRESS_SUCCESS,
+        payload: payload,
+      });
+    } catch (error) {
+      console.log(error.message);
+      dispatch({
+        type: SELL_ORDER_ADDRESS_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+
+export const getSellDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: SELL_ORDER_ADDRESS_REQUEST,
+      type: SELL_DETAILS_REQUEST,
     });
 
     const {
-      sellOrder,
       userLogin: { userInfo },
     } = getState();
-    let payload = sellOrder;
-    payload["shippingAddress"] = shipping;
+
     const config = {
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.post(`/api/sell-orders`, payload, config);
+
+    const { data } = await axios.get(`/api/sell-orders/`, config);
 
     dispatch({
-      type: SELL_ORDER_ADDRESS_SUCCESS,
-      payload: shipping,
+      type: SELL_DETAILS_SUCCESS,
+      payload: data,
     });
   } catch (error) {
-    console.log(error.message);
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    // if (message === "Not authorized, token failed") {
+    //   dispatch(logout());
+    // }
     dispatch({
-      type: SELL_ORDER_ADDRESS_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+      type: SELL_DETAILS_FAIL,
+      payload: message,
     });
   }
 };
-
-// export const getOrderDetails = (id) => async (dispatch, getState) => {
-//   try {
-//     dispatch({
-//       type: ORDER_DETAILS_REQUEST,
-//     });
-
-//     const {
-//       userLogin: { userInfo },
-//     } = getState();
-
-//     const config = {
-//       headers: {
-//         Authorization: `Bearer ${userInfo.token}`,
-//       },
-//     };
-
-//     const { data } = await axios.get(`/api/orders/${id}`, config);
-
-//     dispatch({
-//       type: ORDER_DETAILS_SUCCESS,
-//       payload: data,
-//     });
-//   } catch (error) {
-//     const message =
-//       error.response && error.response.data.message
-//         ? error.response.data.message
-//         : error.message;
-//     if (message === "Not authorized, token failed") {
-//       dispatch(logout());
-//     }
-//     dispatch({
-//       type: ORDER_DETAILS_FAIL,
-//       payload: message,
-//     });
-//   }
-// };
 
 // export const payOrder =
 //   (orderId, paymentResult) => async (dispatch, getState) => {

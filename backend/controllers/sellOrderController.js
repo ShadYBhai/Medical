@@ -22,4 +22,13 @@ const updatesellOrderItems = asyncHandler(async (req, res) => {
   }
 });
 
-export { sellOrderItems, updatesellOrderItems };
+const getSellOrders = asyncHandler(async (req, res) => {
+  try {
+    const order = await SellOrders.find({ user: req.user._id });
+    res.status(201).json(order);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
+export { sellOrderItems, updatesellOrderItems, getSellOrders };
