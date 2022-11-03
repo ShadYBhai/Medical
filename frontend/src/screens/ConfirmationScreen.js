@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 const ConfirmationScreen = () => {
   const navigate = useNavigate();
@@ -20,7 +20,9 @@ const ConfirmationScreen = () => {
             Promised Amount.
           </p>
         </CardContent>
-        <Button onClick={handelClick}>Back to Website</Button>
+        <Button variant="primary" onClick={handelClick}>
+          Back to Website
+        </Button>
       </Card>
     </ConfirmationDiv>
   );
@@ -40,10 +42,10 @@ const ConfirmationDiv = styled.div`
     margin-top: 2rem;
   }
 `;
-const Button = styled.button`
-  display: flex;
-  align-self: center;
-  margin-left: 15rem;
-`;
+// const Button = styled.button`
+//   display: flex;
+//   align-self: center;
+//   margin-left: 15rem;
+// `;
 
 export default ConfirmationScreen;

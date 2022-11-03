@@ -18,6 +18,7 @@ const SellShippingScreen = () => {
     let formData = new FormData(e.target);
     const formDataObj = Object.fromEntries(formData.entries());
     dispatch(saveSellShippingAddress(formDataObj));
+    history("/confirmation");
   };
 
   return (
