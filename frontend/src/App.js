@@ -20,6 +20,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import SellShippingScreen from "./screens/SellShippingScreen";
 import OrderScreen from "./screens/OrderScreen";
 import ConfirmationScreen from "./screens/ConfirmationScreen";
+import SellOrderScreen from './screens/SellOrderScreen';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         <Route path="/category/:id" element={<IndivisualCategoryScreen />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/sellorder" element={<SellShippingScreen />} />
+        <Route path="/sellorders" element={<SellOrderScreen />} />
         <Route path="/orders" element={<OrderScreen />} />
         <Route path="/order/:id" element={<OrderScreen />} />
 
