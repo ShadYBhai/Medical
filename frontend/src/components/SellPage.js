@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
 import {
-  Button,
   CssBaseline,
   TextField,
   Link,
@@ -9,15 +8,21 @@ import {
   Typography,
   Container,
 } from "@mui/material";
-import { DatePicker, LocalizationProvider, DesktopDatePicker } from "@mui/x-date-pickers";
+import {
+  DatePicker,
+  LocalizationProvider,
+  DesktopDatePicker,
+} from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Copyright from "./Tiny_Components/Copyright";
 import Dropdown from "./Tiny_Components/Dropdown";
 // import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import styled from "styled-components";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { createSellOrder } from "../actions/sellOrderActions";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import styled from "styled-components";
 
 // const theme = createTheme();
 function SellPage() {
@@ -38,10 +43,9 @@ function SellPage() {
     event.preventDefault();
     let formData = new FormData(event.target);
     const formDataObj = Object.fromEntries(formData.entries());
-    formDataObj['expiry'] = date.$d;
-    formDataObj['unit'] = element;
+    formDataObj["expiry"] = date.$d;
+    formDataObj["unit"] = element;
     dispatch(createSellOrder(formDataObj, navigate));
-
   };
 
   const handleDateChange = (newDate) => {
@@ -112,14 +116,8 @@ function SellPage() {
                 </LocalizationProvider>
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sell
-            </Button>
+            <ButtonC>Sell</ButtonC>
+
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/" variant="body2">
@@ -137,6 +135,14 @@ function SellPage() {
   );
 }
 
+const ButtonC = styled.button`
+  width: 100%;
+  height: 2.6rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  background-color: black;
+  color: white;
+`;
 
 export default SellPage;
 // class SellPage extends Component {
