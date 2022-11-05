@@ -1,46 +1,22 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const reviewSchema = mongoose.Schema(
-  {
-    name: { type: String },
-    rating: { type: Number },
-    comment: { type: String },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
-  },
-
-  {
-    timestamps: true,
-  }
-);
 const productSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
     },
 
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
     image: {
       type: String,
-      required: true,
     },
     brand: {
       type: String,
       ref: "brand",
     },
     category: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "category",
-      required: true,
     },
 
     description: {
@@ -57,7 +33,6 @@ const productSchema = new Schema(
     },
     price: {
       type: Number,
-      required: true,
       default: 0,
     },
     countInStock: {
@@ -71,8 +46,6 @@ const productSchema = new Schema(
       type: Number,
       default: 0,
     },
-
-    reviews: [reviewSchema],
 
     // subcategory: {
     //   type: Schema.Types.ObjectId,

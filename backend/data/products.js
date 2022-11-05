@@ -1,11 +1,10 @@
 const products = [
   {
-    name: "Soranib Tablet 30'S",
-    image: "/images/honey.jpg",
+    name: "D Protin Chocolate Powder 500 gm",
+    image: "/images/d_protin_chocolate_powder_500_gm_0.jpg",
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -17,7 +16,6 @@ const products = [
     description:
       "Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 599.99,
     countInStock: 7,
     rating: 4.0,
@@ -77,7 +75,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -89,7 +86,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -101,7 +97,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -113,7 +108,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -125,7 +119,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
@@ -137,7 +130,6 @@ const products = [
     description:
       "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
     // brand: "Apple",
-    category: "635f75d39b7758cbbaceb6a3",
     price: 89.99,
     countInStock: 10,
     rating: 4.5,
