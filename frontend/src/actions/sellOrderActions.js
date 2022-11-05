@@ -71,7 +71,7 @@ export const saveSellShippingAddress =
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.post(`/api/sell-orders/`, payload, config);
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/sell-orders/`, payload, config);
 
       dispatch({
         type: SELL_ORDER_ADDRESS_SUCCESS,
@@ -105,7 +105,7 @@ export const getSellDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/sell-orders`, config);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/sell-orders`, config);
 
     dispatch({
       type: SELL_DETAILS_SUCCESS,

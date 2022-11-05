@@ -30,7 +30,7 @@ const IndivisualCategoryScreen = () => {
 
   useEffect(() => {
     const fetchCategory = async () => {
-      const { data } = await axios.get(`/api/productsByCategory/${id}`);
+      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/productsByCategory/${id}`);
       console.log(data);
       setProducts(data);
     };

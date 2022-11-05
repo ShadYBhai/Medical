@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 // import morgan from "morgan";
 // import category from "./data/category.js";
 import dotenv from "dotenv";
@@ -21,7 +22,7 @@ const app = express();
 // if (process.env.NODE_ENV === "development") {
 //   app.use(morgan("dev"));
 // }
-
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

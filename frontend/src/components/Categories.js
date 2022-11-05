@@ -13,7 +13,7 @@ const Categories = () => {
 
   useEffect(() => {
     const fecthCat = async () => {
-      const { data } = await axios.get(`/api/category`);
+      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/category`);
       setCategory(data);
     };
     fecthCat();
