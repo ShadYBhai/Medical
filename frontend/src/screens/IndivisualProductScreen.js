@@ -86,7 +86,7 @@ const IndivisualProductScreen = () => {
                   <Row>
                     <Col>Status:</Col>
                     <Col>
-                      {product.countInstock > 0 ? "In Stock" : "Out Of Stock"}
+                      {product.countInstock > 0 ? "In Stock" : "InStock"}
                     </Col>
                   </Row>
                 </ListGroupItem>
