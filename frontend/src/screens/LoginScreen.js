@@ -9,8 +9,8 @@ import styled from "styled-components";
 import Message from "../components/Message";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("test@123");
   const location = useLocation();
   const history = useNavigate();
 
