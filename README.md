@@ -15,7 +15,8 @@ On top of that, it’s an online service at your doorstep.
 
 # Live Demo
 
-**LINK** [![portfolio](https://img.shields.io/badge/DEMO-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medical.project-test.online/)
+
+[![portfolio](https://img.shields.io/badge/click me-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medical.project-test.online/)
 
 
 You can use the app on both mobile and desktop.
