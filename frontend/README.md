@@ -1,5 +1,3 @@
-# Getting Started with Medical Central
-
 
 # Medical Central Backend
 
