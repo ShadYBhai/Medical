@@ -21,11 +21,11 @@ On top of that, it’s an online service at your doorstep.
 
 You can use the app on both mobile and desktop.
 
-test Credentials:
+**Test Credentials**:
 
-Email: test@gmail.com
+**Email**: test@gmail.com
 
-Password: test-user@pass
+**Password**: test-user@pass
 
 
 
