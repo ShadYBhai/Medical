@@ -40,6 +40,8 @@ You can use the app on both mobile and desktop.
 
 
 
+
+
     
 ## Tech Stack
 
