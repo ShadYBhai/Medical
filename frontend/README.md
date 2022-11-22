@@ -1,70 +1,62 @@
 # Getting Started with Medical Central
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Medical Central Backend
 
-In the project directory, you can run:
+In today's world, we understand, the shortage of medicines and their production.
+Consumers not utilizing the full of their medicines & healthcare. 
 
-### `npm start`
+We connect these entities to regulate the remaining medicines at the most affordable prices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We buy the remaining medicines from users, verify them with our pharmacy research team,
+and make them available at the most affordable price, below 50% of the original price.
+On top of that, it’s an online service at your doorstep.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Live Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![portfolio](https://img.shields.io/badge/Click-Me-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medical.project-test.online/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+You can use the app on both mobile and desktop.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Test Credentials**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Email**: test@gmail.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Password**: test-user@pass
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installation
 
-### Code Splitting
+* Fork or directly clone this repository to your local machine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Use the ```npm install ``` command to install dependencies
 
-### Analyzing the Bundle Size
+* Once the dependencies are finished installing, use the ```npm run dev``` command inside the root directory to open the app in your local browser of choice
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    
+## Tech Stack
 
-### Deployment
+**Client:** React JS, Redux, TailwindCSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Server:** Node JS, Express JS
 
-### `npm run build` fails to minify
+**DB**: MongoBD
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Authors
+
+- [Ashish Nikumbh](https://www.linkedin.com/in/ashish-nikumbh-01714416b/)
+- Nikhil Jadhav
+- Pradymna Hegde
+
