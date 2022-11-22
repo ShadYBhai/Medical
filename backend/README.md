@@ -32,7 +32,7 @@ You can use the app on both mobile and desktop.
 
 ## Installation
 
-* Fork or directly clone this repository to your local machine
+* Fork or directly clone root repository to your local machine
 
 * Use the ```npm install ``` command to install dependencies
 
