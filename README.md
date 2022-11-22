@@ -2,18 +2,19 @@
 # Medical Central
 
 In today's world, we understand, the shortage of medicines and their production.
-Consumers not utilizing the full of their medicines & healthcare.
+Consumers not utilizing the full of their medicines & healthcare. 
+
 We connect these entities to regulate the remaining medicines at the most affordable prices.
+
 We buy the remaining medicines from users, verify them with our pharmacy research team,
 and make them available at the most affordable price, below 50% of the original price.
 On top of that, it’s an online service at your doorstep.
 
+
+
+
 # Live Demo
 
-
-
-
-## 🔗 Live Demo
 [![portfolio](https://img.shields.io/badge/DEMO-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://medical.project-test.online/)
 
 
@@ -24,6 +25,10 @@ test Credentials:
 Email: test@gmail.com
 
 Password: test-user@pass
+
+
+
+
 ## Installation
 
 * Fork or directly clone this repository to your local machine
@@ -31,6 +36,7 @@ Password: test-user@pass
 * Use the ```npm install ``` command to install dependencies
 
 * Once the dependencies are finished installing, use the ```npm start``` command inside the root directory to open the app in your local browser of choice
+
 
 
     
