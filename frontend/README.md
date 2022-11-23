@@ -1,6 +1,10 @@
 
 # Medical Central
 
+
+<img src='https://user-images.githubusercontent.com/105300000/203542800-52c68b6a-30f8-4fa8-a24a-ede9d7d7dbdd.png' width='100'>
+
+
 In today's world, we understand, the shortage of medicines and their production.
 Consumers not utilizing the full of their medicines & healthcare. 
 
