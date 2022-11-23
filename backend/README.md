@@ -12,13 +12,13 @@ On top of that, it’s an online service at your doorstep.
 
 
 ## Table of contents
-1.[Live Demo](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#live-demo)
+[Live Demo](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#live-demo)
 
-2.[Installation](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#installation)
+[Installation](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#installation)
 
-3.[Tech Stack](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#tech-stack)
+[Tech Stack](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#tech-stack)
 
-4.[Authors](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#authors)
+[Authors](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#authors)
 
 
 # Live Demo
