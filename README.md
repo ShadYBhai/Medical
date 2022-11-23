@@ -6,10 +6,11 @@ Consumers not utilizing the full of their medicines & healthcare.
 
 We connect these entities to regulate the remaining medicines at the most affordable prices.
 
+![alt text]([http://url/to/img.png](https://drive.google.com/file/d/1rwm3KQNLq0y_08qqH9SvvQpy_rpaqViG/view?usp=share_link))
+
 We buy the remaining medicines from users, verify them with our pharmacy research team,
 and make them available at the most affordable price, below 50% of the original price.
 On top of that, it’s an online service at your doorstep.
-
 
 
 
