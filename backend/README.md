@@ -10,11 +10,12 @@ We buy the remaining medicines from users, verify them with our pharmacy researc
 and make them available at the most affordable price, below 50% of the original price.
 On top of that, it’s an online service at your doorstep.
 
-## Table Of Contents
-    Live Demo
-    Intsallation
-    Tech Stack
-    Authors
+
+## Table of contents
+1.[Live Demo](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#live-demo)
+2.[Installation](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#installation)
+3.[Tech Stack](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#tech-stack)
+4.[Authors](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#authors)
 
 
 # Live Demo
@@ -60,5 +61,5 @@ You can use the app on both mobile and desktop.
 
 - [Ashish Nikumbh](https://www.linkedin.com/in/ashish-nikumbh-01714416b/)
 - Nikhil Jadhav
-- Pradymna Hegde
+
 
