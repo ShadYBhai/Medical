@@ -1,5 +1,5 @@
 
-# Medical Central Frontend
+# Medical Central
 
 In today's world, we understand, the shortage of medicines and their production.
 Consumers not utilizing the full of their medicines & healthcare. 
