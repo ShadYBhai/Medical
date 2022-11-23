@@ -21,7 +21,7 @@ On top of that, it’s an online service at your doorstep.
 
 [3.Tech Stack](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#tech-stack)
 
-4.[Authors](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#authors)
+[4.Authors](https://github.com/ShadYBhai/Medical/blob/main/backend/README.md#authors)
 
 
 # Live Demo
