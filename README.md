@@ -57,4 +57,3 @@ You can use the app on both mobile and desktop.
 
 - [Ashish Nikumbh](https://www.linkedin.com/in/ashish-nikumbh-01714416b/)
 - Nikhil Jadhav
-- Pradymna Hegde
