@@ -11,7 +11,7 @@ and make them available at the most affordable price, below 50% of the original 
 On top of that, it’s an online service at your doorstep.
 
 ## Table Of Contents
-    **Live Demo
+    Live Demo
     Intsallation
     Tech Stack
     Authors
