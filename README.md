@@ -6,7 +6,7 @@ Consumers not utilizing the full of their medicines & healthcare.
 
 We connect these entities to regulate the remaining medicines at the most affordable prices.
 
-<img src='https://user-images.githubusercontent.com/105300000/203542800-52c68b6a-30f8-4fa8-a24a-ede9d7d7dbdd.png' width='100' height="">
+<img src='https://user-images.githubusercontent.com/105300000/203542800-52c68b6a-30f8-4fa8-a24a-ede9d7d7dbdd.png' width='100'>
 
 
 We buy the remaining medicines from users, verify them with our pharmacy research team,
